@@ -1,5 +1,5 @@
-# VTT jQuery Boilerplate
-A jump-start for VTT jQuery plugins development
+# VTT jQuery AccessibleUpload Plugin
+jQuery Accessible Upload Input
 
 ## Usage
 
@@ -18,9 +18,7 @@ A jump-start for VTT jQuery plugins development
 3. Call the plugin:
 
 	```javascript
-	$("#element").accessibleUpload({
-		// config
-	});
+	$('input[type="file"]').accessibleUpload();
 	```
 
 ## Structure
