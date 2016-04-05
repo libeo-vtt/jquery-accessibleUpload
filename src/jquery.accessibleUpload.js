@@ -13,7 +13,7 @@
             clicked: 'is-clicked',
             extern: 'is-external',
             error: 'is-error'
-        }, (window.classes !== undefined ? window.classes : this.config.customGlobalClasses || {});
+        }, (window.classes !== undefined ? window.classes : this.config.customGlobalClasses) || {});
 
         this.init();
     };
