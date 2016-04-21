@@ -1,5 +1,5 @@
-# VTT jQuery AccessibleUpload Plugin
-jQuery Accessible Upload Input
+# jQuery AccessibleUpload Plugin
+Create a file input element with accessibility features
 
 ## Usage
 
