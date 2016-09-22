@@ -3,7 +3,11 @@
         this.accessibleUpload = $(element);
 
         // Default module configuration
-        this.defaults = {};
+        this.defaults = {
+            labels: {
+                selectedFileCount: 'files selected'
+            }
+        };
 
         // Merge default classes with window.project.classes
         this.classes = $.extend(true, this.defaults.classes, (window.project ? window.project.classes : {}));
@@ -54,7 +58,7 @@
                 label = '<span class="visuallyhidden">' + this.title + '</span>';
             }
 
-            var filename = this._getFilename($(event.currentTarget).val());
+            var filename = this._getFilename($(event.currentTarget));
 
             this.accessibleUpload.hide();
 
@@ -70,9 +74,14 @@
                 .focus();
         },
 
-        _getFilename: function(filename) {
-            filename = filename.split('\\');
-            return filename.pop();
+        _getFilename: function(input) {
+            if (input.prop('files').length > 1) {
+                return input.prop('files').length + ' ' + this.labels.selectedFileCount;
+            }
+            else {
+                filename = input.val().split('\\');
+                return filename.pop();
+            }
         },
 
         _fileRemove: function(event) {
