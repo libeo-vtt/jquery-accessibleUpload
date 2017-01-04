@@ -63,7 +63,7 @@
             this.accessibleUpload.hide();
 
             if (this.accessibleUpload.next('.lbo-aif').find('button').length === 0) {
-                this.accessibleUpload.next('.lbo-aif').append('<button class="btn-supprimer"><span class="visuallyhidden">Supprimer<span class="visuallyhidden"> ' + filename + '.</span></span></button>');
+                this.accessibleUpload.next('.lbo-aif').append('<button class="btn-supprimer"><span class="visuallyhidden">Supprimer ' + filename + '.</span></button>');
             }
 
             this.accessibleUpload.next('.lbo-aif')
