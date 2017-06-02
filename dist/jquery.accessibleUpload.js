@@ -88,6 +88,8 @@
             event.preventDefault();
             this.accessibleUpload.next('.lbo-aif').remove();
 
+            this._resetFormElement(event.data.input.accessibleUpload);
+
             var clone = $(event.data.input.accessibleUpload).clone();
             $(event.data.input.accessibleUpload).replaceWith(clone);
             clone.show()
@@ -95,6 +97,11 @@
                 .accessibleUpload();
 
             return false;
+        },
+
+        _resetFormElement: function(e) {
+            e.wrap('<form>').closest('form').get(0).reset();
+            e.unwrap();
         }
 
     });
